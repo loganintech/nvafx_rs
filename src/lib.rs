@@ -9,7 +9,7 @@ include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
 pub enum EffectSelector {
     Denoiser,
     Dereverb,
-    Dereverb_Denoiser,
+    DereverbDenoiser,
 }
 
 impl Into<NvAFX_EffectSelector> for EffectSelector {
@@ -21,7 +21,7 @@ impl Into<NvAFX_EffectSelector> for EffectSelector {
             EffectSelector::Dereverb => {
                 "dereverb"
             }
-            EffectSelector::Dereverb_Denoiser => {
+            EffectSelector::DereverbDenoiser => {
                 "dereverb_denoiser"
             }
         }).expect("Constant conversion failed.");
